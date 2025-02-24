@@ -8,8 +8,7 @@ export default function SplashScreen() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.5)).current;
 
-  // TODO: Add auth check
-  // const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     Animated.parallel([
@@ -26,11 +25,11 @@ export default function SplashScreen() {
       }),
     ]).start();
 
-    // const timer = setTimeout(() => {
-    //   router.replace('/auth');
-    // }, 2000);
+    const timer = setTimeout(() => {
+      router.replace('/auth');
+    }, 2000);
 
-    // return () => clearTimeout(timer);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
