@@ -14,7 +14,7 @@ export default function Layout() {
           navigationBarHidden: true,
         }}
       >
-        <Stack.Screen
+        {/* <Stack.Screen
           name="index"
           options={{
             headerShown: false,
@@ -51,7 +51,7 @@ export default function Layout() {
             headerBackTitle: "",
             title: "",
           }}
-        />
+        /> */}
       </Stack>
     </>
   );

@@ -5,13 +5,13 @@ import {
     Text,
     TouchableOpacity,
 } from "react-native";
-// import { useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import * as LocalAuthentication from "expo-local-authentication";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function AuthScreen() {
-    // const router = useRouter();
+    const router = useRouter();
     const [isAuthenticating, setIsAuthenticating] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [hasBiometrics, setHasBiometrics] = useState(false);
@@ -48,8 +48,7 @@ export default function AuthScreen() {
             });
 
             if (auth.success) {
-                // TODO: Se debe crear la vista de home
-                // router.replace("/home");
+                router.replace("/home");
             } else {
                 setError("Autenticación fallida. Por favor, inténtalo de nuevo.");
             }
